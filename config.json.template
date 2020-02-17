@@ -1,0 +1,7 @@
+{
+  "influx": "http://user:password@host:8086/db",
+  "devices": {
+    "fvA": { "id": "aaabbbccc", "key": "ababab" },
+    "fvB": { "id": "aaabbbccc", "key": "ababab" }
+  }
+}
