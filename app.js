@@ -6,7 +6,7 @@ const config = require(process.env.CONFIG || './config.json');
 
 const port = process.env.PORT || 3000;
 
-const influx = new Influx.InfluxDB(config.influx);
+const influx = (config.influx ? new Influx.InfluxDB(config.influx) : null);
 
 const DPS = {
   MODE: '4', // 'cold' or 'hot'.
@@ -137,12 +137,16 @@ const loop = function(name) {
     }
     if (shouldLog) {
       console.log(name, now, state);
-      influx.writeMeasurement(name, [
-        {
-          tags: {},
-          fields: { temp: state.temp, sp: state.sp1, cooling: state.cooling, },
-        }
-      ])
+      if (influx) {
+        influx.writeMeasurement(name, [
+          {
+            tags: {},
+            fields: { temp: state.temp, sp: state.sp1, cooling: state.cooling, },
+          }
+        ])
+      } else {
+        console.log("influx logging disabled");
+      }
       state.logged = new Date();
       state.changed = false;
     }
