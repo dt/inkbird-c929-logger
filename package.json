@@ -1,0 +1,20 @@
+{
+  "name": "inkbird-logger",
+  "version": "0.0.1",
+  "description": "Log readings from tuya-based Inkbird C929s to influx DB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dt/inkbird-c929-logger.git"
+  },
+  "author": "David Taylor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/st/inkbird-c929-logger/issues"
+  },
+  "homepage": "https://github.com/dt/inkbird-c929-logger"
+}
