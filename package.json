@@ -19,6 +19,6 @@
   "homepage": "https://github.com/dt/inkbird-c929-logger",
   "dependencies": {
     "influx": "^5.5.1",
-    "tuyapi": "^5.1.3"
+    "tuyapi": "^7.5.2"
   }
 }
